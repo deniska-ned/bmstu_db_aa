@@ -20,7 +20,7 @@ int levenshtein_rec(char const *const s1, char const *const s2, int const i,
   } else {
     int eq = 0;
 
-    if (s1[i] != s2[j]) eq = 1;
+    if (s1[i - 1] != s2[j - 1]) eq = 1;
 
     res = min_int(levenshtein_rec(s1, s2, i - 1, j) + 1,
                   min_int(levenshtein_rec(s1, s2, i, j - 1) + 1,
@@ -52,7 +52,7 @@ int levenshtein_iter(char const *const s1, char const *const s2) {
     for (size_t j = 1; j <= l1; ++j) {
       int eq = 0;
 
-      if (s1[j] != s2[i]) eq = 1;
+      if (s1[j - 1] != s2[i - 1]) eq = 1;
 
       curr[j] =
           min_int(curr[j - 1] + 1, min_int(prev[j - 1] + eq, prev[j] + 1));
