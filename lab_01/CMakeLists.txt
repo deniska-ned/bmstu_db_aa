@@ -19,3 +19,18 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 target_link_libraries(${PROJECT_NAME} PUBLIC
   levenshtein
   )
+
+
+set(TIME_TEST time_test)
+
+add_executable(${TIME_TEST}
+  tests/main.c
+  )
+
+target_include_directories(${TIME_TEST} PUBLIC
+  libs/levenshtein/include/
+  )
+
+target_link_libraries(${TIME_TEST} PUBLIC
+  levenshtein
+  )
