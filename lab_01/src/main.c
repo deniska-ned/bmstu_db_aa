@@ -22,13 +22,13 @@ int main(void) {
       s1[strlen(s1) - 1] = '\0';
       s2[strlen(s2) - 1] = '\0';
 
-      int res_lr = levenshtein_rec(s1, s2, strlen(s1), strlen(s2));
+      int res_lr = levenshtein_rec(s1, s2);
       printf("LR  ('%s', '%s') = %d\n", s1, s2, res_lr);
 
       int res_li = levenshtein_iter(s1, s2);
       printf("LI  ('%s', '%s') = %d\n", s1, s2, res_li);
 
-      int res_dlr = damerau_levenshtein_rec(s1, s2, strlen(s1), strlen(s2));
+      int res_dlr = damerau_levenshtein_rec(s1, s2);
       printf("DLR ('%s', '%s') = %d\n", s1, s2, res_dlr);
 
       int res_dli = damerau_levenshtein_iter(s1, s2);
