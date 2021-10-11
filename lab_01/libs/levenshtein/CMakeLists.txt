@@ -19,6 +19,8 @@ add_subdirectory(libs/googletest)
 add_executable(${U_TEST_TARGET}
   tests/leven_rec.cpp
   tests/leven_iter.cpp
+  tests/damerau_leven_rec.cpp
+  tests/damerau_leven_iter.cpp
   )
 
 target_include_directories(${U_TEST_TARGET} PUBLIC
