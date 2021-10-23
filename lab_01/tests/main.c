@@ -8,6 +8,8 @@
 #define FUNC_COUNT 4
 #define ITER_COUNT 1000
 
+typedef int(leven_func)(char const *const, char const *const);
+
 double measure_time(leven_func *const fun, char const *const s1,
                     char const *const s2) {
   clock_t ts = clock();
